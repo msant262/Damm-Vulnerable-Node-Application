@@ -32,6 +32,8 @@ jobs:
           project: Teste ITAU
           team: '\CxServer\SP\EMEA\LATAM\nova-8.com - 55'
           checkmarx_url: https://cxprivatecloud.checkmarx.net
+          scanners: sast
+          preset: Checkmarx Default
           checkmarx_username: marcos.santos
           checkmarx_password: Mama@280193
           checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C
