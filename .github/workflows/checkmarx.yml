@@ -29,7 +29,7 @@ jobs:
       - name: Checkmarx
         uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.3
         with:
-          project: Teste ITAU
+          project: Teste Demo
           team: 'CxServer/SP/EMEA/LATAM/nova-8.com - 55'
           checkmarx_url: https://cxprivatecloud.checkmarx.net
           scanners: sast
