@@ -1,0 +1,46 @@
+pipeline:
+  name: Node
+  identifier: Node
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Checkmarx
+        identifier: Checkmarx
+        type: CI
+        spec:
+          cloneCodebase: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          serviceDependencies:
+            - identifier: One
+              name: One
+              type: Service
+              spec:
+                connectorRef: dockerconectorref
+                image: checkmarx/ast-cli
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Checkmarx
+                  identifier: Checkmarx
+                  spec:
+                    shell: Bash
+                    command: |
+                      /app/bin/cx \
+                      scan create \
+                      -s https://github.com/Nova-8/Damm-Vulnerable-Node-Application.git \
+                      --agent CircleCI \
+                      --project-name $PROJECT \
+                      --branch $CX_BRANCH \
+                      --base-uri https://eu.ast.checkmarx.net \
+                      --base-auth-uri https://eu.iam.checkmarx.net \
+                      --tenant beta_nova8 \
+                      --client-id Demo \
+                      --client-secret 3cq8RmnAnw0eXlheB04TE3Th8fuC6irc \
