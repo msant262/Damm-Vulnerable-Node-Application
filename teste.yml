@@ -35,7 +35,7 @@ pipeline:
                     command: |
                       /app/bin/cx \
                       scan create \
-                      -s https://github.com/Nova-8/Damm-Vulnerable-Node-Application.git \
+                      -s . \
                       --agent CircleCI \
                       --project-name $PROJECT \
                       --branch $CX_BRANCH \
