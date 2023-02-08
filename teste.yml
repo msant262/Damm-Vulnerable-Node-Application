@@ -36,9 +36,9 @@ pipeline:
                       /app/bin/cx \
                       scan create \
                       -s . \
-                      --agent CircleCI \
-                      --project-name $PROJECT \
-                      --branch $CX_BRANCH \
+                      --agent ASTCLI \
+                      --project-name DVNA \
+                      --branch master \
                       --base-uri https://eu.ast.checkmarx.net \
                       --base-auth-uri https://eu.iam.checkmarx.net \
                       --tenant beta_nova8 \
